@@ -5,7 +5,7 @@ class FrameSwitcher(tk.Tk):
     def __init__(self):
         super().__init__()
         self.title("Frame switcher")
-        self.geometry("300x200")
+        self.geometry("300x220")
         self.config(padx=10, pady=20)
 
         #crear dos frmaes
@@ -13,7 +13,7 @@ class FrameSwitcher(tk.Tk):
         self.frame_dos = FrameDos(self)
 
         btn_cerrar = tk.Button(self, text="Cerrar", command=self.destroy)
-        btn_cerrar.pack(side="bottom", pady=20)
+        btn_cerrar.pack(side="bottom", pady=10)
 
         #menu
         menu = tk.Menu(self, name="main")
@@ -83,11 +83,11 @@ class FrameUno(tk.Frame):
         super().__init__(parent)
         entry_value = IntVar()
         input_value = tk.Entry(self, textvariable=entry_value)
-        input_value.pack(pady=10, side="left")  
+        input_value.pack(pady=5, side="left")  
         label_result = tk.Label(self)
         act = Actualizar_label()
         convertButton = tk.Button(self,text="Convertir", command=lambda: act.pixel_rem(label_result, entry_value.get()))
-        convertButton.pack(pady=10)
+        convertButton.pack(pady=5)
         #resultado
         label_result.pack()
         
@@ -98,10 +98,10 @@ class FrameDos(tk.Frame):
 
         entry_value = IntVar()
         input_value = tk.Entry(self, textvariable=entry_value)
-        input_value.pack(pady=10, side="left")  
+        input_value.pack(pady=5, side="left")  
         act = Actualizar_label()
         convertButton = tk.Button(self,text="Convertir", command=lambda: act.rem_pixel(label_result, entry_value.get()))
-        convertButton.pack(pady=10)
+        convertButton.pack(pady=5)
         #resultado
         label_result = tk.Label(self)
         label_result.pack()
